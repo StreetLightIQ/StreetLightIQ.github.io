@@ -102,7 +102,7 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <figure class="sliq-figure" style="margin-top:0">
-          <img src="static/images/pipeline.png" alt="System architecture of SLIQ: phone-side capture, detection, tracking and upload; cloud-side segmentation, lamp-state classification, pose, lamp height and position, light map and per-lamp and per-street metrics.">
+          <img src="static/images/pipeline.png" alt="System architecture of SLIQ: on the phone, capture, detection, tracking and upload; in the cloud, segmentation, lamp-state classification (On, Dim and Off crops shown), pose, lamp height and position, the light map, and per-lamp and per-street metrics.">
           <figcaption>System architecture of SLIQ. Numbered markers show the processing order: video capture, on-phone detection and tracking, upload, cloud processing, physical illumination modeling, and report generation.</figcaption>
         </figure>
         <p class="sliq-text">
@@ -148,8 +148,8 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Light maps and lamp-level metrics</h2>
       <figure class="sliq-figure">
-        <img src="static/images/lightmap_real.png" alt="A real night frame with tracked lamps and confounders, next to the modeled top-down light map of the same street." loading="lazy">
-        <figcaption>A real frame and the model light map of the same street. (a) Tracked lamps with their fitted state and height, and detected confounders. (b) The modeled light map from the camera to 40&nbsp;m ahead. Solid white lines bound lit road and dashed lines bound dark road. Lamp L20 lies above the image edge.</figcaption>
+        <img src="static/images/lightmap_real.png" alt="A real night frame with the modeled light map painted onto the road, a top-down light map of the same street, and a side view showing that one lamp is above the camera's field of view." loading="lazy">
+        <figcaption>A real frame and the model light map of the same street. (a) A frame from a training drive with the tracked lamps (fitted state and height) and the model light map projected onto the road, coloured by the lamp that lights each point (blue: dark road). (b) The light map from the camera to 40&nbsp;m ahead; solid lines bound lit road, dashed lines dark road, and hatching marks road not visible in (a). (c) Side view: lamp L20 lies above the camera's field of view (inset: L20 2.8&nbsp;s earlier).</figcaption>
       </figure>
       <figure class="sliq-figure">
         <img src="static/images/lightmap_schematic.png" alt="Schematic street with five lamps showing lit, in-between and dark road, served-area boundaries, the loss-if-off area of one lamp, and dark stretches, with the illuminance profile along the centre line." loading="lazy">
