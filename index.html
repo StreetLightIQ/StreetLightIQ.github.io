@@ -36,7 +36,7 @@
 
   <style>
     .sliq-figure { margin: 1.75rem 0 2.25rem; }
-    .sliq-figure img { width: 100%; height: auto; display: block; margin: 0 auto; }
+    .sliq-figure img, .sliq-figure video { width: 100%; height: auto; display: block; margin: 0 auto; }
     .sliq-figure img.narrow { max-width: 720px; }
     .sliq-figure figcaption { margin-top: .75rem; font-size: .95rem; color: #4a4a4a; text-align: left; }
     .sliq-figure figcaption b { color: #222; }
@@ -102,8 +102,8 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <figure class="sliq-figure" style="margin-top:0">
-          <img src="static/images/pipeline.png" alt="System architecture of SLIQ: on the phone, capture, detection, tracking and upload; in the cloud, segmentation, lamp-state classification (On, Dim and Off crops shown), pose, lamp height and position, the light map, and per-lamp and per-street metrics.">
-          <figcaption>System architecture of SLIQ. Numbered markers show the processing order: video capture, on-phone detection and tracking, upload, cloud processing, physical illumination modeling, and report generation.</figcaption>
+          <video src="static/videos/pipeline_demo.mp4" poster="static/images/pipeline_demo_poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Four views of the same 30-second night drive: the streetlight detector, the tracker, the scene segmenter, and the light model."></video>
+          <figcaption>SLIQ on 30 seconds of a real night drive, shown four ways: (1) the streetlight detector on every frame, (2) the tracker giving each lamp one ID across frames, (3) the scene segmenter separating road, buildings and other lights, and (4) the light model, which marks road the fitted lamps leave lit (green), in between (amber) or dark (red), next to a top view of the road ahead. Number plates are blurred.</figcaption>
         </figure>
         <p class="sliq-text">
           A smartphone on the dashboard records the drive. On the phone, a small quantized detector finds streetlight heads and a tracker links them across frames. In the cloud, each lamp is classified as On, Dim or Off, the scene is segmented to separate road from confounding light sources, and a physics model rebuilds where each lamp is and how much road it lights. SLIQ then reports, for every street and every lamp, which road is lit, which is dark, and which lamps matter most if they fail.
